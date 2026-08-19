@@ -451,7 +451,7 @@ export function Landing({
           ) : (
             <>
               <span className="text-[18px] font-bold tracking-[-.02em]">
-                Ardeis Tech
+                Ardeis Tech Solutions
               </span>
               {/* The ® is tuned to hug the wordmark — keep the 2px gap and the
                   flex-start alignment. */}

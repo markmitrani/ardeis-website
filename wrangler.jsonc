@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ardeis-website",
+  "compatibility_date": "2026-08-18",
+
+  // Assets-only Worker: no "main" entry point, because there is no server
+  // code. `next build` emits the static export into ./out and Cloudflare
+  // serves it straight from Static Assets — those requests are free and
+  // unlimited, and never count against the Workers request quota.
+  "assets": {
+    "directory": "./out",
+
+    // The export writes 404.html; serve it for unmatched paths so a bad URL
+    // gets the site's own not-found page rather than a bare Cloudflare error.
+    "not_found_handling": "404-page"
+  }
+}
